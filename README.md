@@ -21,7 +21,7 @@ The function with parameters
 show_prompt(title, message, pribtnHide = false, pribtnLabel = "Close", secBtnLabel = '', secBtnAction = '')
 ```
 
-Example with a custom text lanel for the close button
+Example with a custom text label for the close button
 ```javascript
 show_prompt('Open website', 'Visit larrindell.com?', false, 'No', 'Yes', `window.open('https://larrindell.com');document.getElementById('modal-alert').style.display = 'none'`)
 ```
