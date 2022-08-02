@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS Prompt</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./modal.css">
+</head>
+<body>
+<h1 id="demo-heading">Vanilla JS Prompt modals</h1>
+<p>Simple alert function with endless possibilities.</p>
+<h2>Default close button prompt</h2>
+<button onclick="show_prompt('Default close button', 'Do you want to color heading?', false, undefined, 'Color', `document.getElementById('demo-heading').style.background = '#04AA6D';document.getElementById('modal-alert').style.display = 'none'`)">Test default close button prompt</button><br><br>
+<code>show_prompt('Default close button', 'Do you want to color heading?', false, undefined, 'Yes', `document.getElementById('demo-heading').style.background = '#04AA6D';document.getElementById('modal-alert').style.display = 'none'`)</code>
+<h2>No close button prompt</h2>
+<button onclick="show_prompt('No close button prompt', 'You need to reload?', true, '', 'Reload', `location.reload();`)">Test no close button prompt</button><br><br>
+<code>show_prompt('No close button prompt', 'Do you want to reload?', true, '', 'Refresh', `location.reload();`)</code>
+<h2>Custom buttons prompt</h2>
+<button onclick="show_prompt('Default close button', 'Visit larrindell.com?', false, 'No', 'Yes', `window.open('https://larrindell.com');document.getElementById('modal-alert').style.display = 'none'`)">Test custom buttons prompt</button><br><br>
+<code>show_prompt('Default close button', 'Visit larrindell.com?', false, 'No', 'Yes', `window.open('https://larrindell.com');document.getElementById('modal-alert').style.display = 'none'`)</code>
+<h2>Simple alert prompt</h2>
+<button onclick="show_prompt('Simple alert prompt', 'Only close button')">Test simple alert prompt</button><br><br>
+<code>show_prompt('Simple alert prompt', 'Only close button')</code>
+
+<h2>The full function to call</h2>
+<code>
+    show_prompt(title, message, pribtnHide = false, pribtnLabel = "Close", secBtnLabel = '', secBtnAction = '')
+</code>
+
+    <div class="modal" id="modal-alert">
+        <div class="modal-overlay" tabindex="-1">
+            <div class="modal-container">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modal-alert-title">
+                        Error
+                    </h2>
+                </div>
+                <div class="modal-text">
+                    <p id="modal-alert-content">
+                        Something went wrong.
+                    </p>
+                </div>
+                <div class="modal-buttons">
+                    <button class="modal-button" id="modal-button-primary" onclick="document.getElementById('modal-alert').style.display = 'none';">Close</button>
+                    <button class="modal-button" id="modal-button-secondary" onclick=""></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./prompt.js"></script>
+</body>
+</html>
